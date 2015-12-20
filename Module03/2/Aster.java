@@ -1,13 +1,34 @@
-public class Aster extends Flower {
-    private String variety;
+public class Bouquet {
+    //Поля класу
+    private Flower[] flowers = new Flower[21];
+    private int quantity;
 
-    public String getVariety() {
-        return variety;
+    //Конструктор
+    Bouquet() {
+        quantity = 0;
     }
 
-    public void setVariety(String variety) {
-        this.variety = variety;
+    //Методи
+    //Геттери і сеттери
+    public Flower[] getFlowers() {
+        return flowers;
     }
 
-    //Якась логіка
+    public int getQuantity() {
+        return quantity;
+    }
+
+    //Логіка
+    public void smell() {
+        //Smell algorithm
+    }
+
+    public void present() {
+        //Present algorithm
+    }
+
+    public void add(Flower flower) {
+        flowers[quantity] = flower;
+        quantity += 1;
+    }
 }
