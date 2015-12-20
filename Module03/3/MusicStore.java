@@ -1,7 +1,17 @@
 public class MusicStore {
     //Поля класу
-    public Instrument[] instruments;
-    public String address;
+    private Instrument[] instruments = new Instrument[100];
+    private String address;
+
+    //Методи
+    //Геттери і сеттери
+    public String getStings() {
+        return address;
+    }
+
+    public Instrument[] getInstruments() {
+        return instruments;
+    }
 
     //Щось тут ще
 }
