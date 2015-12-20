@@ -1,7 +1,7 @@
 public class Flower {
     //Поля класу
-    public int height;
-    public int color;
+    private int height;
+    private int color;
 
     //Конструктори
     Flower() {
@@ -15,6 +15,24 @@ public class Flower {
     }
 
     //Методи класу
+    //Геттери і сеттери
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    //Логіка
     public void cut() {
         //Cut algorithm
     }
