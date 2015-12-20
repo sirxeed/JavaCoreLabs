@@ -1,34 +1,13 @@
-public class Bouquet {
-    //Поля класу
-    private Flower[] flowers = new Flower[21];
-    private int quantity;
+public class Aster extends Flower {
+    private String variety;
 
-    //Конструктор
-    Bouquet() {
-        quantity = 0;
+    public String getVariety() {
+        return variety;
     }
 
-    //Методи
-    //Геттери і сеттери
-    public Flower[] getFlowers() {
-        return flowers;
+    public void setVariety(String variety) {
+        this.variety = variety;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    //Логіка
-    public void smell() {
-        //Smell algorithm
-    }
-
-    public void present() {
-        //Present algorithm
-    }
-
-    public void add(Flower flower) {
-        flowers[quantity] = flower;
-        quantity += 1;
-    }
+    //Якась логіка
 }
