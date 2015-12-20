@@ -1,10 +1,10 @@
 public class File {
     //Поля класу
-    public String name;
-    public String type;
-    public String path;
-    public boolean hidden = false;
-    public boolean directory = false;
+    private String name;
+    private String type;
+    private String path;
+    private boolean hidden = false;
+    private boolean directory = false;
 
     //Конструктори
     File() {
@@ -25,8 +25,43 @@ public class File {
         this.directory = true;
     }
 
-    //Методи
-    public void move(String pathNew) {
+    //Методи класу
+    //Геттери і сеттери
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public boolean isHidden() {
+        return hidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        this.hidden = hidden;
+    }
+
+    public boolean isDirectory() {
+        return directory;
+    }
+
+     public void move(String pathNew) {
         //move algorithm
     }
 
@@ -39,8 +74,4 @@ public class File {
         this.type = type;
     }
 
-    public void setHidden(boolean hidden) {
-        this.hidden = hidden;
-    }
-    
 }
