@@ -1,11 +1,10 @@
 public class Bouquet {
     //Поля класу
-    private Flower[] flowers = new Flower[21];
-    private int quantity;
+    private Flower[] flowers = new Flower[1];
 
     //Конструктор
-    Bouquet() {
-        quantity = 0;
+    Bouquet(Flower flower) {
+        flowers[0] = flower;
     }
 
     //Методи
@@ -15,7 +14,7 @@ public class Bouquet {
     }
 
     public int getQuantity() {
-        return quantity;
+        return flowers.length;
     }
 
     //Логіка
@@ -27,8 +26,43 @@ public class Bouquet {
         //Present algorithm
     }
 
+    /*
     public void add(Flower flower) {
-        flowers[quantity] = flower;
-        quantity += 1;
+        //Бекап квітів, які вже в букеті
+        Flower[] flowersTemp = new Flower[flowers.length];
+        flowersTemp = flowers;
+
+        //Створюємо новий масив із розмірністю +1
+        Flower[] this.flowers = new Flower[flowersTemp.length + 1];
+
+        //Переносимо квіти з бекапа в новий букет
+        for (int i = 0; i <= this.flowers.length - 1; i++) {
+            this.flowers[i] = flowersTemp[i];
+        }
+
+        //Додаємо нову квітку
+        flowers[flowers.length] = flower;
     }
+    */
+
+    public void add(Flower flower) {
+        //Створюємо новий масив з розмірністю +1
+        flowers = newFlowers(flowers);
+
+        //додавання нового елемента
+        flowers[flowers.length - 1] = flower;
+    }
+
+    //Метод створення нового масиву з розмірністю +1 зі збереженням старих елементів
+    private Flower[] newFlowers(Flower[] flowersOld) {
+        //Новий масив
+        Flower[] flowers = new Flower[flowersOld.length + 1];
+
+        //Перенос елементів зі старого масива в новий
+        for (int i = 0; i <= flowersOld.length - 1; i++) {
+            flowers[i] = flowersOld[i];
+        }
+        return flowers;
+    }
+
 }
