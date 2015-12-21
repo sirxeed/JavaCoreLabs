@@ -1,5 +1,3 @@
-package package2;
-
 public class Bush {
     //Поля класу
     private Rose[] roses = new Rose[100];
