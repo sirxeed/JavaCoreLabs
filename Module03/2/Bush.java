@@ -1,6 +1,8 @@
+package package2;
+
 public class Bush {
     //Поля класу
-    Rose[] roses;
+    private Rose[] roses = new Rose[100];
     int quantity;
 
     //Конструктори
@@ -13,7 +15,7 @@ public class Bush {
         //Cut algorithm
     }
 
-    public void Smell() {
+    public void smell() {
         //Cut algorithm
     }
 }
