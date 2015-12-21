@@ -1,3 +1,5 @@
+package package1;
+
 public class File {
     //Поля класу
     private String name;
@@ -27,8 +29,6 @@ public class File {
 
     //Методи класу
     //Геттери і сеттери
-
-
     public String getName() {
         return name;
     }
