@@ -4,16 +4,12 @@
 public class Sort {
 
     public static int[] bulb(int[] array) {
-        boolean checker = true;
-
-        while (checker) {
-            checker = false;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i + 1]) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                if (array[i] > array[j]) {
                     int tempValue = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = tempValue;
-                    checker = true;
+                    array[i] = array[j];
+                    array[j] = tempValue;
                 }
             }
         }
