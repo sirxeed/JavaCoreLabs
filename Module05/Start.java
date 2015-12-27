@@ -37,24 +37,31 @@ public class Start {
         //Виконаємо сортування за зростанням методом бульбашки
         array = Sort.bulb(array);
 
-        //Шукаємо максимальне та мінімальне значення
-        int min = array[0];
-        int max = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            if (min > array[i])
-                min = array[i];
-            if (max < array[i])
-                max = array[i];
-        }
-
-        System.out.println("Minimum value is: " + min);
-        System.out.println("Maximum value is: " + max);
+        //Шукаємо мінімальне та максимальне значення
+        minimum(array);
+        maximum(array);
 
         //Роздрукуємо усі елементи масиву
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
 
+    }
+    public static void minimum(int[] array) {
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (min > array[i])
+                min = array[i];
+        }
+        System.out.println("Minimum value is: " + min);
+    }
+
+    public static void maximum(int[] array) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (max < array[i])
+                max = array[i];
+        }
+        System.out.println("Minimum value is: " + max);
     }
 }
