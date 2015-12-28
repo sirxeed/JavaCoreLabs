@@ -2,34 +2,35 @@ package package1;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Start {
-    public static void main(String[] args) throws FileNotFoundException {
-        ArrayList<File> files = new ArrayList<File>();
-        Directory directory = new Directory(files);
+public class Directory extends File {
+    private ArrayList<File> files = new ArrayList<File>();
 
-        //System.out.print("Enter the directory name: ");
-        Scanner scanner = new Scanner(System.in);
-        //directory.setName(scanner.next());
-        directory.setName("dir1");
-        System.out.println("You created a directory '" + directory.getName() + "'");
+    Directory(ArrayList<File> files) {
 
-        directory.addFiles(new TextFile());
-        directory.getFiles().get(0).setName("File1");
-        System.out.println("'" + directory.getFiles().get(0).getName() + "' file has been created");
+    }
 
-        directory.addFiles(new TextFile());
-        directory.getFiles().get(1).setName("File2");
-        System.out.println("'" + directory.getFiles().get(1).getName() + "' file has been created");
+    //Геттери
+    public ArrayList<File> getFiles() {
+        return files;
+    }
 
-        directory.addFiles(new TextFile());
-        directory.getFiles().get(2).setName("File3");
-        System.out.println("'" + directory.getFiles().get(2).getName() + "' file has been created");
+    public File getFileByName(String fileName) throws FileNotFoundException {
+        int fileNumber = -1;
+        for (int i = 0; i <= files.size() - 1; i++) {
+            if (files.get(i).getName().equals(fileName)) {
+                fileNumber = i;
+            }
+        }
+        if (fileNumber != -1) {
+            System.out.println("Found '" + fileName + "' file");
+            return files.get(fileNumber);
+        } else {
+            throw new FileNotFoundException("File '" + fileName + "' not found");
+        }
+    }
 
-        //Візьмемо файл за іменем
-        System.out.print("Enter the file name you want to get: ");
-        String fileName = scanner.next();
-        directory.getFileByName(fileName);
+    public void addFiles(File file) {
+        files.add(file);
     }
 }
